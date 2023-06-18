@@ -1,0 +1,25 @@
+.weekchart {
+    padding-top: 43px;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 100px;
+
+    .weekchart--img {
+        width: 30%;
+        overflow: hidden;
+        border-radius: 10px;
+
+        img {
+            display: block;
+            width: 100%;
+            transition: all 0.25s linear;
+        }
+
+        &:hover img {
+            transform: scale(1.2);
+        }
+    }
+}

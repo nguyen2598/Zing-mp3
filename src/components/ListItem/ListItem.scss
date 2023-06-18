@@ -1,0 +1,53 @@
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(235, 225, 223);
+    }
+
+    .list-item--info {
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        .list-item--conmusic {
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin: 0 8px;
+        }
+
+        .list-item--content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            & span:first-child {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            & span:last-child {
+                font-size: 12px;
+            }
+        }
+    }
+    .list-item--album {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+    .list-item--time {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

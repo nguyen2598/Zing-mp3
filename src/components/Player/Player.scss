@@ -1,0 +1,179 @@
+.player {
+    padding: 8px 16px 0 16px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+
+    .detail-song {
+        width: 30%;
+        display: flex;
+        align-items: center;
+
+        .thumb-img {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 100%;
+            border: 1px solid red;
+            margin-right: 16px;
+        }
+        .detail-song-content {
+            display: flex;
+            flex-direction: column;
+            margin-right: 16px;
+            padding-left: 8px;
+
+            & span:first-child {
+                font-weight: bold;
+                color: #615f5f;
+                font-size: 14px;
+                white-space: nowrap;
+                width: 116px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                // color: red;
+                // margin-bottom: 8px;
+            }
+
+            & span:last-child {
+                font-weight: bold;
+                font-size: 12px;
+                color: #8d8989;
+                // color: red;
+            }
+        }
+        .detail-song--icon {
+            display: flex;
+            & span:first-child {
+                // font-weight: bold;
+                // color: #615f5f;
+                font-size: 24px;
+                margin-right: 16px;
+                // color: red;
+                // margin-bottom: 8px;
+            }
+            & span:nth-child(2) {
+                // font-weight: bold;
+                // color: #615f5f;
+                margin-right: 16px;
+                font-size: 24px;
+                // color: red;
+                // margin-bottom: 8px;
+            }
+
+            & span:last-child {
+                font-weight: bold;
+                font-size: 24px;
+                // color: #8d8989;
+                // color: red;
+            }
+        }
+    }
+
+    .main-player {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .main-player--controll-1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .shuffe,
+            .repeat {
+                color: rgb(211, 42, 211);
+            }
+
+            span {
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            & span:nth-child(2n) {
+                margin: 0 16px;
+            }
+
+            & span:nth-child(3) {
+                width: 48px;
+                height: 48px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #6a6969;
+                border-radius: 100%;
+            }
+            .disable {
+                pointer-events: none;
+                color: rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        .main-player--controll-2 {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .truck {
+                width: 75%;
+                height: 3px;
+                background-color: rgba(0, 0, 0, 0.1);
+                position: relative;
+                border-radius: 2px;
+                margin: 0 20px;
+                cursor: pointer;
+                // overflow: hidden;
+                &:hover {
+                    height: 4px;
+
+                    .proress {
+                        height: 4px;
+                        border-radius: 4px;
+                    }
+                }
+
+                .proress {
+                    position: absolute;
+                    top: 0;
+                    width: 0;
+                    left: 0;
+                    height: 3px;
+                    background-color: #0e8080;
+                    border-radius: 2px;
+                }
+            }
+        }
+    }
+
+    .volume-player {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+
+        & span {
+            color: rgb(154, 60, 163);
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        span:hover {
+            opacity: 1;
+        }
+
+        .volume {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .volume-icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.header {
+    // height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    margin-top: 10px;
+    padding: 0 59px;
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        .header-left--arrow {
+            span {
+                font-size: 24px;
+                color: #ccc;
+                margin-right: 32px;
+
+                svg {
+                }
+            }
+        }
+
+        .header-search {
+            flex: 1;
+            max-width: 400px;
+            width: 100%;
+        }
+    }
+
+    .header-right {
+    }
+}

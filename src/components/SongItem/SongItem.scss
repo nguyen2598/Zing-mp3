@@ -1,0 +1,73 @@
+.song-item {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    // flex: 1;
+    .song-item--order {
+        font-size: 36px;
+        font-weight: 900;
+        color: transparent;
+        // -webkit-text-fill-color: transparent; /* Thiết lập chữ thành màu trong suốt */
+        -webkit-text-stroke-width: 2px; /* Độ dày của viền */
+        // -webkit-text-stroke-color: red;
+        // text-shadow: 2px 2px 2px red;
+    }
+
+    .song-item--img {
+        width: 60px;
+        height: 60px;
+        border-radius: 4px;
+        overflow: hidden;
+
+        &.small {
+            width: 40px;
+            height: 40px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .song-item--content {
+        display: flex;
+        flex-direction: column;
+
+        .song-item--title {
+            font-size: 15px;
+            font-weight: bold;
+            &.text_1_line {
+                overflow: hidden;
+                text-overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+        }
+        .song-item--artists {
+            font-size: 12px;
+            color: #575656;
+            overflow: hidden;
+            text-overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        .song-item--date {
+        }
+    }
+
+    .song-item--percent {
+        display: flex;
+        flex: 1;
+        justify-content: end;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+    }
+}

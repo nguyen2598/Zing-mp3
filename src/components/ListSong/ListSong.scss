@@ -1,0 +1,32 @@
+.listsong {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+
+    .listsong-title {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        color: #757474cc;
+    }
+
+    .listsong-item {
+        display: flex;
+        flex-direction: column;
+    }
+    .listsong-footer {
+        display: flex;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 10px 0;
+        align-items: center;
+        .listsong-footer--length {
+            margin-right: 8px;
+        }
+        .listsong-footer--time {
+            margin-left: 8px;
+        }
+    }
+}
