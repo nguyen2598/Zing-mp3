@@ -41,7 +41,14 @@
     }
 
     .public-player {
+        position: relative;
         background-color: $player-color;
-        height: 90px;
+        overflow: hidden;
+        transition: all 0.5s linear;
+        height: 0;
+        &.h-90 {
+            height: 90px;
+        }
+        // transform: translateY(100px);
     }
 }

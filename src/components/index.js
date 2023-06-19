@@ -14,3 +14,5 @@ export { default as SongItem } from './SongItem/SongItem';
 export { default as NewRelease } from './NewRelease/NewRelease';
 export { default as WeekChart } from './WeekChart/WeekChart';
 export { default as ChartCustom } from './ChartCustom/ChartCustom';
+export { default as Artist } from './Artist/Artist';
+export { default as MV } from './MV/MV';

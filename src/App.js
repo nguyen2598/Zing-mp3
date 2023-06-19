@@ -19,6 +19,9 @@ import { fetchHome, getHome } from './containers/public/Home/HomeSlice';
 import { getBanner } from './components/Slider/BannerSlice';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SearchAlbum from './containers/public/Search/SearchAlbum';
+import SearchArtist from './containers/public/Search/SearchArtist';
+import SearchMV from './containers/public/Search/SearchMV';
 function App() {
     const dispatch = useDispatch();
     useEffect(() => {
@@ -43,7 +46,10 @@ function App() {
                         <Route path={path.ZING_CHART} element={<Zingchart />} />
                         <Route path={path.SEARCH} element={<Search />}>
                             <Route path={path.SONG} element={<SearchSongs />} />
+                            <Route path={path.PLAYLIST__SONG} element={<SearchAlbum />} />
                             <Route path={path.ALL} element={<SearchAll />} />
+                            <Route path={path.ARTIST} element={<SearchArtist />} />
+                            <Route path={path.MV} element={<SearchMV />} />
                         </Route>
                     </Route>
                 </Routes>

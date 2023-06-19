@@ -11,5 +11,8 @@ const path = {
     ALL: 'tat-ca',
     SONG: 'bai-hat',
     HOME__SINGER: ':singer',
+    PLAYLIST__SONG: 'playlist',
+    ARTIST: 'artist',
+    MV: 'video',
 };
 export default path;

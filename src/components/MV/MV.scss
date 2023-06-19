@@ -1,0 +1,62 @@
+.mv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .img-pry {
+        position: relative;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: all 0.25s linear;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        .time {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            padding: 20px;
+        }
+    }
+
+    .mv-content {
+        margin: 10px 0 40px 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+
+        .img-content {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                display: block;
+                width: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+
+        .mv-title {
+            .title {
+                font-size: 14px;
+                font-weight: bold;
+            }
+            .author {
+                font-size: 14px;
+            }
+        }
+    }
+}

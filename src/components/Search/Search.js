@@ -14,13 +14,10 @@ export default function Search() {
     const [keyword, setkeyword] = useState('');
 
     const handleSearch = async (e) => {
-        // console.log(e);
         if (e.keyCode === 13 || e._reactName === 'onClick') {
-            // const response = await musicApi.apiSearch({ keyword });
-            // console.log('search', response);
             dispatch(fetchSearch({ keyword }));
             navigate({
-                pathname: `/${path.SEARCH}/${path.ALL}`,
+                pathname: `/${path.SEARCH}/${path.SONG}`,
                 search: createSearchParams({
                     q: keyword,
                 }).toString(),

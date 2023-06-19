@@ -31,12 +31,13 @@ export default memo(function ListItem({ songData }) {
                 </div>
             </div>
             <div className="list-item--album">
-                {' '}
-                {`${
-                    songData?.album?.title.length >= 20
-                        ? songData?.album?.title.slice(0, 20) + '...'
-                        : songData?.album?.title
-                }`}
+                {songData?.album
+                    ? `${
+                          songData?.album?.title.length >= 20
+                              ? songData?.album?.title.slice(0, 20) + '...'
+                              : songData?.album?.title
+                      }`
+                    : ''}
             </div>
             <div className="list-item--time">{moment.utc(songData?.duration * 1000).format('mm:ss')}</div>
         </div>

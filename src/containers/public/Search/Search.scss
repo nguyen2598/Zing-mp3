@@ -18,11 +18,16 @@
         border-left: 1px solid #929090;
 
         .all--rs-search__item {
-            padding: 0 16px;
+            padding: 0 8px;
+            margin: 0 4px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             &:hover {
+                color: rgb(25, 100, 62);
+            }
+            &.active {
+                border-bottom: 2px solid rgb(25, 100, 62);
                 color: rgb(25, 100, 62);
             }
         }
@@ -67,6 +72,149 @@
                     flex-direction: column;
                 }
             }
+        }
+    }
+}
+
+.search-songs {
+    width: 100%;
+    h3 {
+        margin: 0 0 20px 59px;
+        font-size: 18px;
+    }
+    .search-songs--content {
+        width: 100%;
+
+        padding: 0 45px;
+    }
+}
+
+.search-album {
+    width: 100%;
+    h3 {
+        margin: 0 0 20px 59px;
+        font-size: 18px;
+    }
+    .search-album--content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        // gap: 14px;
+        padding: 0 45px;
+        .section-item {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            padding: 0 14px;
+            // flex: 1;
+
+            .section-item--img {
+                margin-bottom: 10px;
+                border-radius: 4px;
+                overflow: hidden;
+                position: relative;
+
+                .section-item--img__ovelay {
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    z-index: 9;
+                    color: aliceblue;
+                    align-items: center;
+                    justify-content: center;
+
+                    span {
+                        cursor: pointer;
+                    }
+                    & span:nth-child(2) {
+                        padding: 10px;
+                        border: 1px solid #fff;
+                        border-radius: 50%;
+                        margin: 0 10px;
+                    }
+                }
+
+                &:hover .section-item--img__ovelay {
+                    display: flex;
+                }
+
+                img {
+                    display: block;
+                    width: 100%;
+                    object-fit: contain;
+                    transition: all 0.25s linear;
+                }
+
+                &:hover img {
+                    transform: scale(1.2);
+                }
+            }
+
+            .section-item--title {
+                font-weight: bold;
+                overflow: hidden;
+                text-overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+
+            .section-item--desc {
+                // margin-top: 10px;
+                // width: 100%;
+                // white-space: nowrap;
+                overflow: hidden;
+                text-overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+}
+
+.search-artist {
+    width: 100%;
+    h3 {
+        margin: 0 0 20px 59px;
+        font-size: 18px;
+    }
+
+    .search-artist--content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        // gap: 14px;
+        padding: 0 49px;
+
+        .search-artist--item {
+            width: 20%;
+            padding: 0 14px;
+        }
+    }
+}
+
+.search-mv {
+    width: 100%;
+    h3 {
+        margin: 0 0 20px 59px;
+        font-size: 18px;
+    }
+
+    .search-mv--content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        // gap: 14px;
+        padding: 0 49px;
+
+        .search-mv--item {
+            width: calc(100% / 3);
+            padding: 0 14px;
         }
     }
 }
