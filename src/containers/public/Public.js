@@ -6,10 +6,8 @@ import './Public.scss';
 import { useSelector } from 'react-redux';
 export default function Public() {
     const { isPlaying } = useSelector((state) => state?.music);
-    console.log('is', isPlaying);
     const [isShowRightSlidebar, setIsShowRightSlidebar] = useState(false);
     const [CheckIsPlayer, setCheckIsPlayer] = useState(localStorage?.getItem('CurSongId'));
-    console.log('aothe', CheckIsPlayer);
     useEffect(() => {
         if (isPlaying) setCheckIsPlayer(true);
     }, [isPlaying]);

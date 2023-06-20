@@ -16,3 +16,4 @@ export { default as WeekChart } from './WeekChart/WeekChart';
 export { default as ChartCustom } from './ChartCustom/ChartCustom';
 export { default as Artist } from './Artist/Artist';
 export { default as MV } from './MV/MV';
+export { default as NoContentBox } from './NoContentBox/NoContentBox';

@@ -1,9 +1,13 @@
 .search {
+    position: relative;
     display: flex;
     border-radius: 20px;
+
     overflow: hidden;
     margin-right: 32px;
     .icon-search {
+        border-top-left-radius: 20px;
+
         height: 40px;
         padding-left: 16px;
         background-color: #dde4e4;
@@ -14,15 +18,69 @@
         }
     }
 
+    .icon-close {
+        border-top-right-radius: 20px;
+
+        height: 40px;
+
+        padding-right: 16px;
+        background-color: #dde4e4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+
+        svg {
+            font-size: 18px;
+        }
+    }
+
     .input-search {
         background-color: #dde4e4;
         border: none;
         outline: none;
+        // border-top-left-radius: 20px;
+        // border-top-right-radius: 20px;
         padding: 8px 16px;
 
         height: 40px;
         // max-width: 440px;
         width: 100%;
         color: #525151;
+    }
+    .history-search {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        padding: 8px 4px 30px 4px;
+        background-color: #dde4e4;
+        z-index: 10000000;
+        padding-left: 16px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        .process {
+            width: 100%;
+            border: 1px solid #fcfdfd;
+            margin: 8px 0;
+        }
+        h3 {
+            font-size: 20px;
+        }
+
+        .history-search--list {
+            font-size: 14px;
+
+            li {
+                list-style: none;
+                cursor: pointer;
+                padding: 8px 16px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+        }
     }
 }

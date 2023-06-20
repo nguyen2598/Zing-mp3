@@ -1,7 +1,17 @@
-import React from 'react';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink, Outlet, useSearchParams } from 'react-router-dom';
+import path from '../../../ultis/path';
 import './Search.scss';
 export default function Search() {
+    // const [searchParams] = useSearchParams();
+    // const [params, setParams] = useState(null);
+    // useEffect(() => {
+    //     const param = [];
+    //     for (const entry of searchParams.entries()) {
+    //         param.push(entry);
+    //     }
+    //     setParams(param);
+    // }, [searchParams]);
     return (
         <div>
             <div className="category-search">
@@ -11,7 +21,7 @@ export default function Search() {
                         className={({ isActive }) =>
                             isActive ? 'active all--rs-search__item' : 'all--rs-search__item'
                         }
-                        to="bai-hat"
+                        to={path.SONG}
                     >
                         BÀI HÁT
                     </NavLink>
@@ -20,7 +30,7 @@ export default function Search() {
                         className={({ isActive }) =>
                             isActive ? 'active all--rs-search__item' : 'all--rs-search__item'
                         }
-                        to="playlist"
+                        to={path.PLAYLIST__SONG}
                     >
                         PLAYLIST/ALBUM
                     </NavLink>
@@ -29,7 +39,7 @@ export default function Search() {
                         className={({ isActive }) =>
                             isActive ? 'active all--rs-search__item' : 'all--rs-search__item'
                         }
-                        to="artist"
+                        to={path.ARTIST}
                     >
                         NGHỆ SĨ/OA
                     </NavLink>
@@ -38,7 +48,7 @@ export default function Search() {
                         className={({ isActive }) =>
                             isActive ? 'active all--rs-search__item' : 'all--rs-search__item'
                         }
-                        to="video"
+                        to={path.MV}
                     >
                         MV
                     </NavLink>

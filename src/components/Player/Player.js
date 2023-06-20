@@ -98,6 +98,7 @@ export default function Player({ setIsShowRightSlidebar }) {
         if (isPlaying) {
             audio.load();
             audio.play();
+            audio.volume = volume / 100;
         }
         // audioEl.current.play();
     }, [audio]);
