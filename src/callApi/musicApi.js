@@ -20,6 +20,10 @@ const musicApi = {
         const url = `/search`;
         return axiosClient.get(url, { params });
     },
+    apiArtistSong(params) {
+        const url = `/artistsong`;
+        return axiosClient.get(url, { params });
+    },
     getMV(params) {
         const url = `/video`;
         return axiosClient.get(url, { params });

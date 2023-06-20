@@ -11,7 +11,14 @@
         background-color: #888;
         border-radius: 4px;
     }
-
+    .loding-data {
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        svg {
+            transform: scale(3.5);
+        }
+    }
     .home-header {
         height: 70px;
         padding: 0 59px;

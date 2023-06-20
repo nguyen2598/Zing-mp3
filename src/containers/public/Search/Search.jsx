@@ -13,7 +13,7 @@ export default function Search() {
     //     setParams(param);
     // }, [searchParams]);
     return (
-        <div>
+        <div className="search-search">
             <div className="category-search">
                 <span className="rs-search">Kết quả tìm kiếm</span>
                 <div className="all--rs-search">
@@ -54,7 +54,7 @@ export default function Search() {
                     </NavLink>
                 </div>
             </div>
-            <div>
+            <div className="Search-content-X">
                 <Outlet />
             </div>
         </div>
