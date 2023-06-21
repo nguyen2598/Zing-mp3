@@ -2,13 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Search.scss';
 import icons from '../../ultis/icon';
 import musicApi from '../../callApi/musicApi';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchSearch } from '../Slider/BannerSlice';
 import { useNavigate, createSearchParams } from 'react-router-dom';
 import path from '../../ultis/path';
 import { BiHistory } from 'react-icons/bi';
 import { FiTrendingUp } from 'react-icons/fi';
 import { AiOutlineClose } from 'react-icons/ai';
+import { fetchSearchSong, setLoading } from '../../containers/public/Search/SearchSlice';
 
 const { IcSearch } = icons;
 export default function Search() {
@@ -18,7 +19,9 @@ export default function Search() {
     const spanRef = useRef(null);
     const inputRef = useRef(null);
     const searchRef = useRef(null);
-
+    const { searchData } = useSelector((state) => state.music);
+    const { page } = useSelector((state) => state.search);
+    console.log('page', page);
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -33,10 +36,15 @@ export default function Search() {
             window.removeEventListener('click', handleClickOutside);
         };
     }, []);
+
+    useEffect(() => {
+        dispatch(fetchSearchSong({ id: searchData?.top?.id, page: page }));
+    }, [page, searchData]);
     const handleSearch = async (e) => {
         if ((e.keyCode === 13 || e._reactName === 'onClick') && keyword.trim().length > 0) {
             inputRef.current.blur();
             handleBlur();
+            dispatch(setLoading(true));
             const historyList = localStorage?.getItem('searchinput')
                 ? JSON.parse(localStorage.getItem('searchinput'))
                 : [];
@@ -64,6 +72,7 @@ export default function Search() {
     const handleSearchClick = (value) => {
         handleBlur();
         setkeyword(value);
+        dispatch(setLoading(true));
         dispatch(fetchSearch({ keyword: value }));
         navigate({
             pathname: `/${path.SEARCH}/${path.SONG}`,

@@ -28,10 +28,6 @@ function App() {
         dispatch(fetchHome());
     }, []);
 
-    // const datas=useSelector(state=>state?.home?.homeData?.find(item=>item.sectionType==='banner')||null)
-    // dispatch(getBanner(datas))
-    // const data=useSelector(state=>state)
-    // dispatch(getHome())
     return (
         <>
             <div className="App">

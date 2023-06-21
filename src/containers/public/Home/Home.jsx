@@ -1,19 +1,8 @@
-import React, { useEffect } from 'react';
-import {
-    ChartCustom,
-    Header,
-    LoadingData,
-    NewRelease,
-    Section,
-    Slider,
-    SongItem,
-    WeekChart,
-} from '../../../components';
+import React from 'react';
+import { ChartCustom, LoadingData, NewRelease, Section, Slider, SongItem, WeekChart } from '../../../components';
 
 import './Home.scss';
-import { homeApi } from '../../../callApi';
-import { useDispatch, useSelector } from 'react-redux';
-import { add, getHome } from './HomeSlice';
+import { useSelector } from 'react-redux';
 export default function Home() {
     const { loading } = useSelector((state) => state.home);
     console.log('loading', loading);
