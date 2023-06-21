@@ -42,7 +42,7 @@
 
 ## getArtistSong
 
-/artistsong?id=
+/artistsong?id=IW6ZO9UB&page=1&count=50
 
 ## getLyric
 
