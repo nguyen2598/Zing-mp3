@@ -6,12 +6,10 @@ import { musicApi } from '../../../callApi';
 import { current } from '@reduxjs/toolkit';
 import { fetchSearchSong, setPage } from './SearchSlice';
 export default function SearchSongs() {
-    // const { searchData } = useSelector((state) => state.music);
     const { loading, songData, maxPage, page } = useSelector((state) => state.search);
     console.log('serach', songData);
     const [data, setData] = useState(null);
-    // const [page, setPage] = useState(1);
-    // const [maxPage, setMaxPage] = useState(null);
+
     const [isLoading, setIsLoading] = useState(false);
 
     // useEffect(() => {
@@ -30,9 +28,7 @@ export default function SearchSongs() {
     //     fetchDetailplayList();
     // }, [page, searchData]);
     const dispatch = useDispatch();
-    // useEffect(() => {
-    //     dispatch(fetchSearchSong({ id: searchData?.top?.id, page: page }));
-    // }, [page, searchData]);
+
     const handlePageNext = () => {
         dispatch(setPage(page + 1));
     };
