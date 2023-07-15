@@ -8,3 +8,4 @@ export { default as Zingchart } from './Zingchart/Zingchart';
 export { default as Search } from './Search/Search';
 export { default as SearchSongs } from './Search/SearchSongs';
 export { default as SearchAll } from './Search/SearchAll';
+// export { default as SignUp } from './SignUp/SignUp';

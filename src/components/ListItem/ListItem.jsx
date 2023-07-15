@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCurSongId, play, setAlbum } from '../Slider/BannerSlice';
 
 const { IcMus } = icons;
-export default memo(function ListItem({ songData }) {
+export default memo(function ListItem({ songData, isChart, num }) {
     const dispatch = useDispatch();
     // useSelector
     return (
@@ -19,9 +19,16 @@ export default memo(function ListItem({ songData }) {
             }}
         >
             <div className="list-item--info">
-                <div className="list-item--conmusic">
-                    <IcMus />
-                </div>
+                {!isChart ? (
+                    <div className="list-item--conmusic">
+                        <IcMus />
+                    </div>
+                ) : (
+                    <div className={`number ${num % 2 === 0 ? 'red' : 'blue'}`}>
+                        <div className="num">{num}</div>
+                        <div className="underlined">-</div>
+                    </div>
+                )}
                 <img src={songData?.thumbnail} alt="" />
                 <div className="list-item--content">
                     <span title={songData?.title}>

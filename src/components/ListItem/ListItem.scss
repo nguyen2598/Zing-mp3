@@ -16,6 +16,21 @@
 
         .list-item--conmusic {
         }
+        .number {
+            min-width: 64px;
+            font-size: 36px;
+            font-weight: 900;
+            display: flex;
+            justify-content: space-between;
+            -webkit-text-stroke-width: 2px; /* Độ dày của viền */
+            color: transparent;
+            &.red {
+                -webkit-text-stroke-color: red;
+            }
+            &.blue {
+                -webkit-text-stroke-color: blue;
+            }
+        }
 
         img {
             width: 40px;

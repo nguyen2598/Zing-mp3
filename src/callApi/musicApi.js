@@ -24,6 +24,10 @@ const musicApi = {
         const url = `/artistsong`;
         return axiosClient.get(url, { params });
     },
+    apiArtist(params) {
+        const url = `/artist`;
+        return axiosClient.get(url, { params });
+    },
     getMV(params) {
         const url = `/video`;
         return axiosClient.get(url, { params });

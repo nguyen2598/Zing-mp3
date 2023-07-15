@@ -36,11 +36,11 @@
 
 /infosong?id=
 
-## getArtist
+## getArtist - lấy ds album của tìm kiếm 'top.alias'
 
 /artist?name=
 
-## getArtistSong
+## getArtistSong- lấy ds bài hát của tìm kiếm 'top.id'
 
 /artistsong?id=IW6ZO9UB&page=1&count=50
 

@@ -1,0 +1,18 @@
+.zing-chart {
+    padding-left: 24px;
+    height: 100%;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: 2px;
+    &::-webkit-scrollbar {
+        width: 0.4em;
+    }
+    .heading {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 40px;
+    }
+
+    .chart-list {
+    }
+}

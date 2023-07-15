@@ -2,11 +2,25 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Link, useNavigate } from 'react-router-dom';
 export default function SignUp() {
+    const mailRef = useRef(null);
     const nameRef = useRef(null);
     const passwordRef = useRef(null);
+    const confimRef = useRef(null);
     const btnRef = useRef(null);
     const navigate = useNavigate();
     const Invalid = {
+        mail: (value = mailRef.current.value.trim()) => {
+            let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (value?.trim().length === 0) {
+                mailRef.current.nextElementSibling.innerText = 'Vui lòng nhập trường này';
+                return 0;
+            } else if (!filter.test(value?.trim())) {
+                mailRef.current.nextElementSibling.innerText = 'Mail không đúng định dạng';
+                return 0;
+            } else {
+                return 1;
+            }
+        },
         name: (value = nameRef.current.value.trim()) => {
             if (value?.trim().length === 0) {
                 nameRef.current.nextElementSibling.innerText = 'Vui lòng nhập trường này';
@@ -23,22 +37,42 @@ export default function SignUp() {
                 return 1;
             }
         },
+        confirm: (value = confimRef.current.value.trim()) => {
+            if (value?.trim().length === 0) {
+                confimRef.current.nextElementSibling.innerText = 'Vui lòng nhập trường này';
+                return 0;
+            } else if (value?.trim() !== passwordRef.current?.value?.trim()) {
+                confimRef.current.nextElementSibling.innerText = 'Mật khẩu không khớp';
+                return 0;
+            } else {
+                return 1;
+            }
+        },
     };
     useEffect(() => {
         const HandleData = (e) => {
             e.preventDefault();
             let isSUb = true;
+            let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             for (let err in Invalid) {
                 let kq = Invalid[err]();
                 if (!kq) isSUb = false;
             }
             const data = {
+                email: mailRef.current.value.trim(),
                 name: nameRef.current.value.trim(),
                 password: passwordRef.current.value.trim(),
             };
+            // console.log(data.email.trim().length);
 
-            if (isSUb) {
-                fetch(`${process.env.REACT_APP_SERVER_URL}/login`, {
+            if (
+                // data.email.trim().length != 0 &&
+                // data.name.trim().length != 0 &&
+                // data.password.trim().length != 0 &&
+                // filter.test(data.email.trim())
+                isSUb
+            ) {
+                fetch(`${process.env.REACT_APP_SERVER_URL}/sign-up`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -47,13 +81,16 @@ export default function SignUp() {
                 })
                     .then((response) => {
                         if (response.ok) {
-                            navigate('/login');
+                            // POST request was successful
+                            navigate('/login'); // Navigate to the "/login" page
                         } else {
                             // Handle the error if needed
                         }
                     })
 
-                    .catch((error) => {});
+                    .catch((error) => {
+                        // Handle any errors
+                    });
             }
         };
         btnRef.current.addEventListener('click', HandleData);
@@ -65,7 +102,23 @@ export default function SignUp() {
         <AuthContent>
             <form action="" method="post" id="login">
                 <h3 className="heading">Sign up</h3>
-
+                <div className="form-group">
+                    <input
+                        ref={mailRef}
+                        type="text"
+                        id="email"
+                        name="email"
+                        placeholder="email123@gmail.com"
+                        className="form-control"
+                        onBlur={(e) => {
+                            Invalid.mail(e.target.value);
+                        }}
+                        onInput={(e) => {
+                            mailRef.current.nextElementSibling.innerText = '';
+                        }}
+                    />
+                    <span className="form-message"></span>
+                </div>
                 <div className="form-group">
                     <input
                         ref={nameRef}
@@ -100,14 +153,31 @@ export default function SignUp() {
                     />
                     <span className="form-message"></span>
                 </div>
-
+                <div className="form-group">
+                    <input
+                        ref={confimRef}
+                        type="password"
+                        id="password"
+                        name="password-comfim"
+                        placeholder="comfim password"
+                        className="form-control"
+                        onBlur={(e) => {
+                            Invalid.confirm(e.target.value);
+                        }}
+                        onInput={(e) => {
+                            confimRef.current.nextElementSibling.innerText = '';
+                        }}
+                    />
+                    <span className="form-message"></span>
+                </div>
                 <button className="submit" ref={btnRef}>
                     Submit
                 </button>
 
                 <div className="footer-login">
+                    <p>forget password</p>
                     <p>
-                        <Link to="/signup">Sign up</Link>
+                        <Link to="/login">Login</Link>
                     </p>
                 </div>
             </form>

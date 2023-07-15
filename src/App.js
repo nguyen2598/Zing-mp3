@@ -13,6 +13,7 @@ import {
     Search,
     SearchSongs,
     SearchAll,
+    // SignUp,
 } from './containers/public';
 import path from './ultis/path';
 import { fetchHome, getHome } from './containers/public/Home/HomeSlice';
@@ -22,6 +23,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import SearchAlbum from './containers/public/Search/SearchAlbum';
 import SearchArtist from './containers/public/Search/SearchArtist';
 import SearchMV from './containers/public/Search/SearchMV';
+import SignUp from './containers/public/SignUp/SignUp';
 function App() {
     const dispatch = useDispatch();
     useEffect(() => {
@@ -32,9 +34,11 @@ function App() {
         <>
             <div className="App">
                 <Routes>
+                    <Route path={path.LOGIN} element={<Login />} />
+                    <Route path={path.SIGNUP} element={<SignUp />} />
+
                     <Route path={path.PUBLIC} element={<Public />}>
                         <Route path={path.HOME} element={<Home />} />
-                        <Route path={path.LOGIN} element={<Login />} />
                         <Route path={path.MY_MUSIC} element={<MyMusic />} />
                         <Route path={path.ALBUM_TITLE_PID} element={<Album />} />
                         <Route path={path.PLAYLIST_TITLE_PID} element={<Album />} />
